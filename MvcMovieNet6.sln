@@ -5,6 +5,10 @@ VisualStudioVersion = 17.14.35721.306
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{9EB97CB9-D321-04C1-136F-224636A3D34D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfMovie", "WpfMovie\WpfMovie.csproj", "{04F380B2-9395-8DC9-5772-213B8DD05D20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfMovie.Tests", "WpfMovie.Tests\WpfMovie.Tests.csproj", "{75C10D05-201A-F7CF-DBE1-FC01D8FE6385}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{9EB97CB9-D321-04C1-136F-224636A3D34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EB97CB9-D321-04C1-136F-224636A3D34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EB97CB9-D321-04C1-136F-224636A3D34D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04F380B2-9395-8DC9-5772-213B8DD05D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04F380B2-9395-8DC9-5772-213B8DD05D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04F380B2-9395-8DC9-5772-213B8DD05D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04F380B2-9395-8DC9-5772-213B8DD05D20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75C10D05-201A-F7CF-DBE1-FC01D8FE6385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C10D05-201A-F7CF-DBE1-FC01D8FE6385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C10D05-201A-F7CF-DBE1-FC01D8FE6385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C10D05-201A-F7CF-DBE1-FC01D8FE6385}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
