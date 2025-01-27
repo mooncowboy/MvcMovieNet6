@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MvcMovie.Controllers
 {
@@ -171,6 +172,35 @@ namespace MvcMovie.Controllers
         private bool MovieExists(int id)
         {
             return _context.Movie.Any(e => e.Id == id);
+        }
+
+        public async Task<IActionResult> FindBestDirectorAsync()
+        {
+            string? connectionString = _context.Database.GetConnectionString();
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                return Problem("Database connection is unavailable.");
+            }
+
+            string query = "SELECT TOP 1 Director FROM Movies ORDER BY Rating DESC";
+            string bestDirector = string.Empty;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                await connection.OpenAsync();
+                SqlDataReader reader = await command.ExecuteReaderAsync();
+
+                if (await reader.ReadAsync())
+                {
+                    bestDirector = reader.GetString(0);
+                }
+
+                await reader.CloseAsync();
+            }
+
+            ViewBag.BestDirector = bestDirector;
+            return View();
         }
     }
 }
