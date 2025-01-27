@@ -10,17 +10,17 @@ namespace WpfMovie.ViewModels
 {
     public class MainViewModel
     {
-        public ObservableCollection<Movie> TodoItems { get; set; }
+        public ObservableCollection<Movie> MovieItems { get; set; }
 
         public MainViewModel()
         {
-            TodoItems = new ObservableCollection<Movie>();
+            MovieItems = new ObservableCollection<Movie>();
         }
 
         public void AddTodoItem(string title, string description)
         {
             var newItem = new Movie { Title = title, Description = description };
-            TodoItems.Add(newItem);
+            MovieItems.Add(newItem);
         }
 
         public void EditTodoItem(Movie item, string newTitle, string newDescription)
@@ -36,7 +36,7 @@ namespace WpfMovie.ViewModels
         {
             if (item != null)
             {
-                TodoItems.Remove(item);
+                MovieItems.Remove(item);
             }
         }
     }
