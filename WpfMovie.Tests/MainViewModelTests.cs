@@ -23,9 +23,9 @@ namespace WpfMovie.Tests
             viewModel.AddTodoItem(title, description);
 
             // Assert
-            Assert.AreEqual(1, viewModel.TodoItems.Count);
-            Assert.AreEqual(title, viewModel.TodoItems[0].Title);
-            Assert.AreEqual(description, viewModel.TodoItems[0].Description);
+            Assert.AreEqual(1, viewModel.MovieItems.Count);
+            Assert.AreEqual(title, viewModel.MovieItems[0].Title);
+            Assert.AreEqual(description, viewModel.MovieItems[0].Description);
         }
 
         [Test]
@@ -33,7 +33,7 @@ namespace WpfMovie.Tests
         {
             // Arrange
             var item = new Movie { Title = "Old Title", Description = "Old Description" };
-            viewModel.TodoItems.Add(item);
+            viewModel.MovieItems.Add(item);
             string newTitle = "New Title";
             string newDescription = "New Description";
 
@@ -50,13 +50,13 @@ namespace WpfMovie.Tests
         {
             // Arrange
             var item = new Movie { Title = "Test Title", Description = "Test Description" };
-            viewModel.TodoItems.Add(item);
+            viewModel.MovieItems.Add(item);
 
             // Act
             viewModel.DeleteTodoItem(item);
 
             // Assert
-            Assert.AreEqual(0, viewModel.TodoItems.Count);
+            Assert.AreEqual(0, viewModel.MovieItems.Count);
         }
     }
 }
