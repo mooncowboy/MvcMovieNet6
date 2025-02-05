@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfMovie.Tests", "WpfMovie.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie.Tests", "MvcMovie.Tests\MvcMovie.Tests.csproj", "{1FB5A065-6B55-8496-FAD2-2AC26B1BC38F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorMovie", "RazorMovie\RazorMovie.csproj", "{69C33CED-8028-480E-BF79-550F4EE76D4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1FB5A065-6B55-8496-FAD2-2AC26B1BC38F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FB5A065-6B55-8496-FAD2-2AC26B1BC38F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FB5A065-6B55-8496-FAD2-2AC26B1BC38F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69C33CED-8028-480E-BF79-550F4EE76D4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C33CED-8028-480E-BF79-550F4EE76D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C33CED-8028-480E-BF79-550F4EE76D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C33CED-8028-480E-BF79-550F4EE76D4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
