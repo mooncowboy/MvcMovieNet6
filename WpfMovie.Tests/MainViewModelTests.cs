@@ -12,6 +12,7 @@ namespace WpfMovie.Tests
         {
             viewModel = new MainViewModel();
         }
+
         [Test]
         public void AddTodoItem_ShouldAddItemToList()
         {
