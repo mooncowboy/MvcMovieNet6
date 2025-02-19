@@ -1,4 +1,6 @@
 using AspNetCoreRateLimit;
+using RazorMovie.Extensions;
+using RazorMovie.SharedServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +31,10 @@ builder.Services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
 builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
 builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 builder.Services.AddSingleton<IProcessingStrategy, AsyncKeyLockProcessingStrategy>();
+
+// register the Safe service
+builder.Services.AddScoped<Safe>();
+builder.Services.AddHtmlSanitizer();
 
 var app = builder.Build();
 
