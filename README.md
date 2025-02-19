@@ -18,3 +18,4 @@ This project explores potential upgrade challenges when moving from .NET 6 to ne
 • This project is based on the original ASP.NET Core MVC movie sample from Microsoft.  
 • Minimal changes have been introduced to learn about upgrade issues and best practices.  
 • For documentation, refer to the official ASP.NET Core guides.
+* For research purposes, this project intentionally references an out of date version of HtmlSanitizer.
