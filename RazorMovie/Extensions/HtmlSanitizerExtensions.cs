@@ -1,4 +1,4 @@
-﻿using Ganss.Xss;
+﻿using Ganss.XSS;
 
 namespace RazorMovie.Extensions;
 
@@ -8,7 +8,7 @@ public static class HtmlSanitizerExtensions
     {
         serviceCollection.AddScoped(o =>
         {
-            var htmlSanitizer = new Ganss.Xss.HtmlSanitizer();
+            var htmlSanitizer = new Ganss.XSS.HtmlSanitizer();
 
             htmlSanitizer.RemovingAtRule += (sender, args) =>
             {
@@ -30,7 +30,7 @@ public static class HtmlSanitizerExtensions
             {
                 if (args.Tag.TagName.Equals("img", StringComparison.InvariantCultureIgnoreCase) &&
                     args.Attribute.Name.Equals("src", StringComparison.InvariantCultureIgnoreCase) &&
-                    args.Reason == Ganss.Xss.RemoveReason.NotAllowedUrlValue)
+                    args.Reason == Ganss.XSS.RemoveReason.NotAllowedUrlValue)
                 {
                     args.Cancel = true;
                 }

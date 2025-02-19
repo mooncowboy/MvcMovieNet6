@@ -1,4 +1,4 @@
-﻿using Ganss.Xss;
+﻿using Ganss.XSS;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Web;
