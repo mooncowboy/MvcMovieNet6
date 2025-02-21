@@ -16,8 +16,6 @@ namespace RazorMovie.SharedServices
             _htmlHelper = htmlHelper;
             _jsonHelper = jsonHelper;
             _htmlSanitizer = htmlSanitizer;
-
-
         }
 
         public IHtmlContent Raw(string value)
