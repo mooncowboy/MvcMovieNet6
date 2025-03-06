@@ -36,3 +36,5 @@ This project explores potential upgrade challenges when moving from .NET 6 to ne
 1. The HtmlSanitizer reeference in the RazorMovie project is intentionally out of date, and upgrading it causes a namespace change that can confuse some tools.
 1. The upgrade of the MvcMovie project is expected to be the easiest scenario but the upgrade must still resolve any transitive challenges that surface from Microsoft.Data.SqlClient.
 1. The upgrade must choose which NuGet packages to upgrade. And, in this scenario upgrading from nUnit3 to newer version has a breaking change for the `Assert.That` API replacing `Assert.AreEqual`.
+1. Azure Functions project upgraded to .NET 9 should select the correct NuGet packages or it will produce a compile error.
+1. Azure Functions project upgrade should replace Newtonsoft to resolve the compile error.
