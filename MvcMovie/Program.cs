@@ -47,3 +47,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+// Make the implicit Program class public so it can be used by tests
+public partial class Program { }
