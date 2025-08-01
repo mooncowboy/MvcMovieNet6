@@ -24,9 +24,9 @@ namespace WpfMovie.Tests
             viewModel.AddTodoItem(title, description);
 
             // Assert
-            Assert.AreEqual(1, viewModel.MovieItems.Count);
-            Assert.AreEqual(title, viewModel.MovieItems[0].Title);
-            Assert.AreEqual(description, viewModel.MovieItems[0].Description);
+            Assert.That(viewModel.MovieItems.Count, Is.EqualTo(1));
+            Assert.That(viewModel.MovieItems[0].Title, Is.EqualTo(title));
+            Assert.That(viewModel.MovieItems[0].Description, Is.EqualTo(description));
         }
 
         [Test]
@@ -42,8 +42,8 @@ namespace WpfMovie.Tests
             viewModel.EditTodoItem(item, newTitle, newDescription);
 
             // Assert
-            Assert.AreEqual(newTitle, item.Title);
-            Assert.AreEqual(newDescription, item.Description);
+            Assert.That(item.Title, Is.EqualTo(newTitle));
+            Assert.That(item.Description, Is.EqualTo(newDescription));
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace WpfMovie.Tests
             viewModel.DeleteTodoItem(item);
 
             // Assert
-            Assert.AreEqual(0, viewModel.MovieItems.Count);
+            Assert.That(viewModel.MovieItems.Count, Is.EqualTo(0));
         }
     }
 }

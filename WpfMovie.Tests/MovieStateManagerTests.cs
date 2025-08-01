@@ -34,8 +34,8 @@ namespace WpfMovie.Tests
             var movieString = stateManager.Serialize(aMovie);
 
             // Assert
-            Assert.NotNull(movieString);
-            Assert.IsNotEmpty(movieString);
+            Assert.That(movieString, Is.Not.Null);
+            Assert.That(movieString, Is.Not.Empty);
         }
 
         [Test]
@@ -48,9 +48,9 @@ namespace WpfMovie.Tests
             var newMovie = stateManager.Deserialize(movieString);
             
             // Assert
-            Assert.IsNotNull(newMovie);
-            Assert.AreEqual("Test Title", newMovie.Title);
-            Assert.AreEqual("Test Description", newMovie.Description);
+            Assert.That(newMovie, Is.Not.Null);
+            Assert.That(newMovie.Title, Is.EqualTo("Test Title"));
+            Assert.That(newMovie.Description, Is.EqualTo("Test Description"));
         }
 
         [Test]
@@ -70,9 +70,9 @@ namespace WpfMovie.Tests
             var newMovie = stateManager.Deserialize(movieString);
 
             // Assert
-            Assert.IsNotNull(newMovie);
-            Assert.AreEqual(aMovie.Title, newMovie.Title);
-            Assert.AreEqual(aMovie.Description, newMovie.Description);
+            Assert.That(newMovie, Is.Not.Null);
+            Assert.That(newMovie.Title, Is.EqualTo(aMovie.Title));
+            Assert.That(newMovie.Description, Is.EqualTo(aMovie.Description));
         }
     }
 }
