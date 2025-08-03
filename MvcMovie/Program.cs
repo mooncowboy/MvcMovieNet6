@@ -5,8 +5,11 @@ using MvcMovie.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//builder.Services.AddDbContext<MvcMovieContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcMovieContext")));
+
 builder.Services.AddDbContext<MvcMovieContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcMovieContext")));
+    options.UseSqlite("Data Source=localdb.db"));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
