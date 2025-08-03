@@ -1,4 +1,4 @@
-﻿using Ganss.XSS;
+﻿using Ganss.Xss;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Moq;
@@ -23,7 +23,7 @@ namespace RazorMovie.Tests
 
             var result = converter.Raw(actualText);
 
-            Assert.AreEqual("HelloWorld", result.ToString());
+            Assert.IsTrue(result.ToString() == "HelloWorld");
         }
     }
 }
