@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "AzureBicep": {
+      "type": "local",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@azure/mcp@latest",
+        "server",
+        "start",
+        "--namespace",
+        "bicepschema",
+        "--read-only"
+      ],
+      "tools": ["bicep"]
+    }
+  }
+}

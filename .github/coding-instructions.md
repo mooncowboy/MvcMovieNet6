@@ -1,7 +1,7 @@
 Your goal is to upgrade this application to .NET 8.
-
 Prioritize security above all else. 
-
 Ignore the Wpf projects. 
+Make it ready to deploy to Azure App Service.
+Generate the necessary bicep files for deployment, use the bicep mcp server as needed.
 
-Make it ready to deploy to Azure App Service. Use the Azure MCP Server if needed.
+Run browser tests to ensure the application works as expected after the upgrade.
