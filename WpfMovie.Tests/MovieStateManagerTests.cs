@@ -42,15 +42,18 @@ namespace WpfMovie.Tests
         public void Deserialize_ShouldCreateMovie()
         {
             // Arrange
-            var movieString = "AAEAAAD/////AQAAAAAAAAAMAgAAAD9XcGZNb3ZpZSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAABVXcGZNb3ZpZS5Nb2RlbHMuTW92aWUCAAAABXRpdGxlC2Rlc2NyaXB0aW9uAQECAAAABgMAAAAKVGVzdCBUaXRsZQYEAAAAEFRlc3QgRGVzY3JpcHRpb24L";
+            // Create a JSON-based serialized string (base64 encoded)
+            var testJson = "{\"Title\":\"Test Title\",\"Description\":\"Test Description\"}";
+            var testBytes = System.Text.Encoding.UTF8.GetBytes(testJson);
+            var movieString = Convert.ToBase64String(testBytes);
             
             // Act
             var newMovie = stateManager.Deserialize(movieString);
             
             // Assert
             Assert.IsNotNull(newMovie);
-            Assert.AreEqual("Test Title", newMovie.Title);
-            Assert.AreEqual("Test Description", newMovie.Description);
+            Assert.That(newMovie.Title, Is.EqualTo("Test Title"));
+            Assert.That(newMovie.Description, Is.EqualTo("Test Description"));
         }
 
         [Test]
@@ -71,8 +74,8 @@ namespace WpfMovie.Tests
 
             // Assert
             Assert.IsNotNull(newMovie);
-            Assert.AreEqual(aMovie.Title, newMovie.Title);
-            Assert.AreEqual(aMovie.Description, newMovie.Description);
+            Assert.That(aMovie.Title, Is.EqualTo(newMovie.Title));
+            Assert.That(aMovie.Description, Is.EqualTo(newMovie.Description));
         }
     }
 }
