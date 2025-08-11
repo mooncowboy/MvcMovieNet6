@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace WpfMovie.Models
 {
-    [Serializable]
     public class Movie : INotifyPropertyChanged
     {
         private string title;
@@ -39,7 +39,7 @@ namespace WpfMovie.Models
             }
         }
 
-        [field: NonSerialized]
+        [JsonIgnore]
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)
